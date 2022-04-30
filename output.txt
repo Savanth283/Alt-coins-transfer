@@ -1,0 +1,10 @@
+The Block Nodes computation:  [{'index': 1, 'timestamp': 1651300604.2253025, 'transactions': [], 'proof': 100, 'previous_hash': '1'}, 
+{'index': 2, 'timestamp': 1651300604.2253025, 'transactions': 
+[{'sender': 'Savanth', 'recipient': 'Mark', 'amount': '4 Eth'}, 
+{'sender': 'Mark', 'recipient': 'Nicholas', 'amount': '10 ETH'}, 
+{'sender': 'Nicholas', 'recipient': 'Savanth', 'amount': '100 ETH'}], 
+'proof': 12345, 'previous_hash': 'd9c83e0ecfc63327291db06fba55697a81ee4a0be7d9c8c743f4ad062ffbe7fd'}, 
+{'index': 3, 'timestamp': 1651300604.2253025, 'transactions': 
+[{'sender': 'Savanth', 'recipient': 'Steyn', 'amount': '6 Eth'}, 
+{'sender': 'Steyn', 'recipient': 'FAF', 'amount': '49 ETH'}], 
+'proof': 687, 'previous_hash': 'a2e303aeafe19c04f9e7580cc91fe3e01ec8f319271521dd60d65d753ef5c793'}]
