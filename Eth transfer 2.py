@@ -9,7 +9,7 @@ class Eth_trf(object):
 
         self.new_block(previous_hash="1", proof=100)
 
-        # Create a new block listing key/value pairs of block information in a JSON object. Reset the list of pending transactions & append the newest block to the queue.
+        # Let's create a new block using dictionary data structure of storing the block information in key/value pairs
 
     def new_block(self, proof, previous_hash=None):
         block = {
@@ -24,17 +24,16 @@ class Eth_trf(object):
 
         return block
 
-#Write Functions to Create New Transactions & Get the Last Block
+#Functions to help to create new transactions and retrive the latest block 
 
-#Search the blockqueue for the most recent block.
-
+  #lets search if there is a node existing already from the recent block. 
 
     @property
     def last_block(self):
  
         return self.queue[-1]
 
-# Add a transaction with relevant info to the 'blockpool' - list of pending tx's. 
+#if the block is emtpy lets add the transaction with the information to the block - chain that we are creating the nodes for. It shows the list of the pending the tx's if exists 
 
     def new_transaction(self, sender, recipient, amount):
         transaction = {
@@ -45,17 +44,18 @@ class Eth_trf(object):
         self.transaction_queue.append(transaction)
         return self.last_block['index'] + 1
 
-# receive one block. Turn it into a string, turn that into Unicode (for hashing). Hash with SHA256 encryption, then translate the Unicode into a hexidecimal string.
+#lets convert our string that we pass into uniocdes (for hashing purposes)
 
     def hash(self, block):
         string_object = json.dumps(block, sort_keys=True)
         block_string = string_object.encode()
 
-        raw_hash = hashlib.sha256(block_string)
-        hex_hash = raw_hash.hexdigest()
+        raw_hash = hashlib.sha256(block_string)#converts the string to hash code using sha256 algorithm 
+   
+        hex_hash = raw_hash.hexdigest()#it converts the raw hash sha256 value to hex values
 
         return hex_hash
-
+# parsing the values for the input
 blocknodes = Eth_trf() 
 User1 = blocknodes.new_transaction('Savanth','Mark','4 Eth')
 User2 = blocknodes.new_transaction('Mark','Nicholas','10 ETH')
